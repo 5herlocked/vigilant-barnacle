@@ -1,1 +1,9 @@
 # Figure out what this needs to contain
+spec:
+  destination: 
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/5herlocked/vigilant-barnacle
+    targetRevision: main
+  ingress:
+    port: 8080
