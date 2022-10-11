@@ -23,13 +23,19 @@ metadata:
 spec:
   template:
     metadata:
+      annotations:
+        autoscaling.knative.dev/metric: "concurrency"
+        autoscaling.knative.dev/target: "5"
+        autoscaling.knative.dev/initial-scale: "0"
+        autoscaling.knative.dev/min-scale: "2"
+        autoscaling.knative.dev/max-scale: "20"
       labels:
         app: kinesis-knative-eventer
     spec:
+      containerConcurrency: 10
       containers:
         - name: kinesis-knative-eventer
           image: 771830474512.dkr.ecr.us-east-1.amazonaws.com/kinesis-knative-ingest:latest
-          imagePullPolicy: Always
           ports:
             - containerPort: 443
               protocol: TCP
