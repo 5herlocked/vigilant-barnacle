@@ -1,3 +1,3 @@
 # vigilant-barnacle
 
-Meant for kubernetes workload builds
+Deployment Guide and YAMLs for setting up

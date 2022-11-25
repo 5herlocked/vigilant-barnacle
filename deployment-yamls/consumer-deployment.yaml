@@ -8,7 +8,7 @@ metadata:
 ---
 
 apiVersion: eventing.knative.dev/v1
-kind: Broker
+kind: Broker  
 metadata:
   name: kinesis-consumer-broker
   namespace: kinesis-consumer-namespace
@@ -41,6 +41,8 @@ spec:
             value: "test-data-stream"
           - name: AWS_DEFAULT_REGION
             value: "us-east-1"
+          - name: K_SINK
+            value: ""
           command: ["python3"]
           args: ["/app/ingest.py"]
 
